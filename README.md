@@ -30,7 +30,6 @@ And finally,
 
 ## TODO
 
- - [ ] Actually write the script
  - [ ] Automate the process of making this a cron job
  - [ ] Make an approximated guess (based on the sunlight of that location) on how long it may take someone to dry their clothes
 

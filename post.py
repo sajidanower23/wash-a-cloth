@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import requests
 import os
+import json
 
 APP_ID_KEY = 'APPID'
 
@@ -19,5 +20,7 @@ CITY_NAME = 'Sydney'
 # headers = {'X-API-TOKEN': 'your_token_here'}
 PAYLOAD = {'q': CITY_NAME, 'APPID': APP_ID}
 URL = 'http://api.openweathermap.org/data/2.5/forecast?q=%s&APPID=%s'%(PAYLOAD['q'], PAYLOAD['APPID'])
-resp = requests.post(URL, data=PAYLOAD)
-print(resp.content)
+resp_json = requests.post(URL).content.decode('utf-8')
+weather_report = json.loads(resp_json)
+
+print(weather_report)

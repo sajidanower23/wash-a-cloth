@@ -19,7 +19,8 @@ except KeyError:
 CITY_NAME = 'Sydney'
 # headers = {'X-API-TOKEN': 'your_token_here'}
 PAYLOAD = {'q': CITY_NAME, 'APPID': APP_ID}
-URL = 'http://api.openweathermap.org/data/2.5/forecast?q=%s&APPID=%s'%(PAYLOAD['q'], PAYLOAD['APPID'])
+URL = 'http://api.openweathermap.org/data/2.5/forecast?q=%s&APPID=%s'\
+            %(PAYLOAD['q'], PAYLOAD['APPID'])
 resp_json = requests.post(URL).content.decode('utf-8')
 weather_report = json.loads(resp_json)
 

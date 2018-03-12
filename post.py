@@ -2,18 +2,17 @@
 import requests
 import os
 
-APP_ID_NAME = 'DEFAULT'
-APP_ID_KEY = 'APPID_' + APP_ID_NAME
+APP_ID_KEY = 'APPID'
 
 try:
-    # APP_ID = os.environ[APP_ID_KEY + 'BLOOP']
     APP_ID = os.environ[APP_ID_KEY]
-    
 except KeyError:
     print('You do not have the required environment variable(s).')
     print('Possible causes:')
     print('1. You forgot to activate the virtualenv:')
     print('2. You forgot to edit the `activate` script of your env with the APPID')
+    print('3. The key used was %s, but ``activate`` doesn\'t initialise them.'%(APP_ID_KEY))
+    print('If that is so, then please contact the developer as it is a bug in the code.')
     exit(1)
 
 CITY_NAME = 'Sydney'
